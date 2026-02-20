@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Storing, accessing, and displaying JSON data in local storage"
+permalink: /
+---
+
 ## Storing, accessing, and displaying JSON data in local storage.
 
 Have you ever been to a website that saved your data when you left the page? Have you ever questioned what the heck is going on underneath the hood of the site to make that possible? Maybe it’s the yummy cookies or that FBI agent who’s got your back covered. Today’s little info-sesh is going to be on the magic of local storage; the sorcery that happens under the hood of the website to keep hold of your data.
