@@ -3,9 +3,6 @@ layout: page
 title: "Storing, accessing, and displaying JSON data in local storage"
 permalink: /
 ---
-
-## Storing, accessing, and displaying JSON data in local storage.
-
 Have you ever been to a website that saved your data when you left the page? Have you ever questioned what the heck is going on underneath the hood of the site to make that possible? Maybe it’s the yummy cookies or that FBI agent who’s got your back covered. Today’s little info-sesh is going to be on the magic of local storage; the sorcery that happens under the hood of the website to keep hold of your data.
 
 Local Storage is a cache within your browser that can act as a temporary save-state. For the non-technical readers, it’s a box that holds information until you do something like uninstalling your browser. Local storage is probably the most rudimentary form of data storage that we can get our hands on, and what it lacks in persistence it makes up in charm. Utilizing JavaScript, we can store, read, and display JSON data.
@@ -59,7 +56,7 @@ The following code will create a new variable which is the JSON string that was 
 ```javaScript
 function storageAccess() {
     localStorage.setItem('job_roles',
-    JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
+	JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
     
     let storage = localStorage.getItem('job_roles');
     
@@ -77,7 +74,7 @@ The following example is a bit more complicated, but the core ideas remain the s
 Step 1 is going to be creating a simple text input box in html. Feel free to copy this code.
 ```html
 <body>
-    <textarea name="text_box" id="text"></textarea>
+	<textarea name="text_box" id="text"></textarea>
 </body>
 ```
 This is just a very simple html block that has a `textarea` tag with a name and id. If you load this up on your browser, you will find that it's just an empty text box. Nothing too special going on here. The next step is to create a new JavaScript file, which we will call `script.js`. within that file, we need to grab hold of the `textarea` element using the following code:
@@ -87,14 +84,14 @@ const text_area = document.getElementById('text');
 now that we have the `textarea` element as a  JavaScript object, we are going to want to toss on an event listener. An event listener just listens for a type of action happening on the page. Like a keyboard input.
 ```javascript
 text_area.addEventListener('input', (e) => {
-    const currentText = e.target.value;
+	const currentText = e.target.value;
 })
 ```
 The above code is more complex, but to simplify, that `current_text` variable is whatever is currently in our HTML text box. Now that we have that text, we can start writing to... You guessed it, the local storage! Within that same function, we are going to add some code to write to the local storage
 ```javascript
 text_area.addEventListener('input', (e) => {
-    const current_text = e.target.value;
-    localStorage.setItem('text_cache', JSON.stringify(current_text));
+	const current_text = e.target.value;
+	localStorage.setItem('text_cache', JSON.stringify(current_text));
 })
 ```
 The only new line here is the `localStorage.setItem`, where we have set the key to `text_cache` and we do `JSON.stringify()` to convert the text into something that the website can understand. With a single string case like this, converting it with JSON isn't required, but it's a good thing to use either way.
@@ -102,8 +99,8 @@ The only new line here is the `localStorage.setItem`, where we have set the key 
 Next, we need to make sure that the site loads the information when you reload the page. We will create the following function to do this:
 ```javascript
 function loadCache() {
-    let cache = JSON.parse(localStorage.getItem('text_cache')) || "";
-    text_area.innerText = cache;
+	let cache = JSON.parse(localStorage.getItem('text_cache')) || "";
+	text_area.innerText = cache;
 }
 ```
 So what is this doing? It is grabbing the local storage value assigned to the key `text_cache`, and then converting it into a JSON object. OR it is returning a blank string (if nothing exists in the local storage assigned to that key). Then it sets the text area to whatever value `cache`is. We are almost done!
@@ -117,13 +114,13 @@ with that final function, the entire script should look like this:
 const text_area = document.getElementById('text');
 
 text_area.addEventListener('input', (e) => {
-    const current_text = e.target.value;
-    localStorage.setItem('text_cache', JSON.stringify(current_text));
+	const current_text = e.target.value;
+	localStorage.setItem('text_cache', JSON.stringify(current_text));
 })
 
 function loadCache() {
-    let cache = JSON.parse(localStorage.getItem('text_cache')) || "";
-    text_area.innerText = cache;
+	let cache = JSON.parse(localStorage.getItem('text_cache')) || "";
+	text_area.innerText = cache;
 }
 
 window.addEventListener('load', loadCache);
