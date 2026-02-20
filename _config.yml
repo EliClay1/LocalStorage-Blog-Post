@@ -1,6 +1,4 @@
-title: "Local Storage + JSON"
-description: "Storing, accessing, and displaying JSON data in local storage"
-theme: minima
+theme: jekyll-theme-midnight
 
 # Optional but nice:
 markdown: kramdown
@@ -9,7 +7,4 @@ kramdown:
 
 # Prevent build weirdness:
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - docker-compose.yml
   - README.md
