@@ -1,1 +1,15 @@
+title: "Local Storage + JSON"
+description: "Storing, accessing, and displaying JSON data in local storage"
 theme: minima
+
+# Optional but nice:
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Prevent build weirdness:
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docker-compose.yml
+  - README.md
