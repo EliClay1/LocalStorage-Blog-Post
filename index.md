@@ -1,8 +1,3 @@
----
-layout: page
-title: "Storing, accessing, and displaying JSON data in local storage"
-permalink: /
----
 Have you ever been to a website that saved your data when you left the page? Have you ever questioned what the heck is going on underneath the hood of the site to make that possible? Maybe it’s the yummy cookies or that FBI agent who’s got your back covered. Today’s little info-sesh is going to be on the magic of local storage; the sorcery that happens under the hood of the website to keep hold of your data.
 
 Local Storage is a cache within your browser that can act as a temporary save-state. For the non-technical readers, it’s a box that holds information until you do something like uninstalling your browser. Local storage is probably the most rudimentary form of data storage that we can get our hands on, and what it lacks in persistence it makes up in charm. Utilizing JavaScript, we can store, read, and display JSON data.
