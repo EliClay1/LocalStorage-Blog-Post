@@ -2,11 +2,8 @@ title: "LocalStorage - How to use and understand it's magic"
 url: "https://eliclay1.github.io"
 baseurl: "/LocalStorage-Blog-Post"
 
-remote_theme: jekyll/minima
-# Remove "theme: minima" entirely — do not have both
-
-minima:
-  skin: dark  # options: classic, dark, solarized, solarized-dark, auto
+remote_theme: cotes2020/jekyll-theme-chirpy
+theme_mode: dark
 
 markdown: kramdown
 permalink: pretty
