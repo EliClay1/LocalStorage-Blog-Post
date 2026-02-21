@@ -3,7 +3,8 @@ url: "https://eliclay1.github.io"
 baseurl: "/LocalStorage-Blog-Post"
 
 remote_theme: jekyll/minima
-minima: skin: dark
+minima: 
+  skin: dark
 
 markdown: kramdown
 permalink: pretty
