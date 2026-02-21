@@ -2,8 +2,8 @@ title: "LocalStorage - How to use and understand it's magic"
 url: "https://eliclay1.github.io"
 baseurl: "/LocalStorage-Blog-Post"
 
-remote_theme: cotes2020/jekyll-theme-chirpy
-theme_mode: dark
+remote_theme: sujaykundu777/devlopr-jekyll
+dark_mode: true
 
 markdown: kramdown
 permalink: pretty
