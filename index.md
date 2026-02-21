@@ -30,7 +30,7 @@ Another thing that you will want to know / understand is what `localStorage` und
 #### Adding things to the local storage
 
 For this example, our key will be called `job_roles` What you are going to want to do is type
-``` JavaScript
+``` js
 localStorage.setItem('job_roles', JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
 ```
 As you can see, the `job_roles` key is being placed in the `setItem()` function. What this code is doing, is it is taking a JSON object (`{"jobs": ['baker','delivery driver', 'manager']}`) and it is using the `JSON.stringify()` function to convert it into string-form so that the local storage can understand it. 
@@ -44,11 +44,11 @@ Then you can use code like `jobs[0]` on it's object form and it will return the 
 #### Reading things from local storage
 
 Now that we have some information within our local storage, we can write some code to access it. 
-```javaScript
+```js
 let storage = localStorage.getItem('job_roles');
 ```
 The following code will create a new variable which is the JSON string that was stored in the local storage. It uses `getItem(<key>)` to grab hold of this data, where our key is `job_roles`. However, in order to really make any use out of this information, we need to convert it into a JSON object, not a JSON string. to do this, you are going to use `JSON.parse(<JSON string>)`. Combining these together, you can create code that looks like this:
-```javaScript
+```js
 function storageAccess() {
     localStorage.setItem('job_roles',
 	JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
@@ -73,17 +73,17 @@ Step 1 is going to be creating a simple text input box in html. Feel free to cop
 </body>
 ```
 This is just a very simple html block that has a `textarea` tag with a name and id. If you load this up on your browser, you will find that it's just an empty text box. Nothing too special going on here. The next step is to create a new JavaScript file, which we will call `script.js`. within that file, we need to grab hold of the `textarea` element using the following code:
-```javascript
+```js
 const text_area = document.getElementById('text');
 ```
 now that we have the `textarea` element as a  JavaScript object, we are going to want to toss on an event listener. An event listener just listens for a type of action happening on the page. Like a keyboard input.
-```javascript
+```js
 text_area.addEventListener('input', (e) => {
 	const currentText = e.target.value;
 })
 ```
 The above code is more complex, but to simplify, that `current_text` variable is whatever is currently in our HTML text box. Now that we have that text, we can start writing to... You guessed it, the local storage! Within that same function, we are going to add some code to write to the local storage
-```javascript
+```js
 text_area.addEventListener('input', (e) => {
 	const current_text = e.target.value;
 	localStorage.setItem('text_cache', JSON.stringify(current_text));
@@ -92,7 +92,7 @@ text_area.addEventListener('input', (e) => {
 The only new line here is the `localStorage.setItem`, where we have set the key to `text_cache` and we do `JSON.stringify()` to convert the text into something that the website can understand. With a single string case like this, converting it with JSON isn't required, but it's a good thing to use either way.
 
 Next, we need to make sure that the site loads the information when you reload the page. We will create the following function to do this:
-```javascript
+```js
 function loadCache() {
 	let cache = JSON.parse(localStorage.getItem('text_cache')) || "";
 	text_area.innerText = cache;
@@ -101,11 +101,11 @@ function loadCache() {
 So what is this doing? It is grabbing the local storage value assigned to the key `text_cache`, and then converting it into a JSON object. OR it is returning a blank string (if nothing exists in the local storage assigned to that key). Then it sets the text area to whatever value `cache`is. We are almost done!
 
 The last step is going to be adding a window event listener, so this function gets called whenever the page is reloaded.
-```javascript
+```js
 window.addEventListener('load', loadCache);
 ```
 with that final function, the entire script should look like this:
-```javascript
+```js
 const text_area = document.getElementById('text');
 
 text_area.addEventListener('input', (e) => {
