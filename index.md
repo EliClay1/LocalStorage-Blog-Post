@@ -49,9 +49,7 @@ let storage = localStorage.getItem('job_roles');
 ```
 The following code will create a new variable which is the JSON string that was stored in the local storage. It uses `getItem(<key>)` to grab hold of this data, where our key is `job_roles`. However, in order to really make any use out of this information, we need to convert it into a JSON object, not a JSON string. to do this, you are going to use `JSON.parse(<JSON string>)`. Combining these together, you can create code that looks like this:
 ```js
-function storageAccess() {
-    localStorage.setItem('job_roles',
-	JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
+function storageAccess() {localStorage.setItem('job_roles',JSON.stringify({"jobs": ['baker','delivery driver', 'manager']}));
     
     let storage = localStorage.getItem('job_roles');
     
