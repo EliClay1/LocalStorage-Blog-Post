@@ -1,15 +1,13 @@
-# _config.yml
-
 title: "My GitHub Pages Site"
 description: "Notes and projects."
-url: "https://username.github.io"
-baseurl: ""          # "/repo" if this is a project site
+url: "https://eliclay1.github.io"
+baseurl: "/LocalStorage-Blog-Post"
 
-theme: minima
+remote_theme: jekyll/minima
+# Remove "theme: minima" entirely — do not have both
 
-# Minima: dark appearance
 minima:
-  skin: dark
+  skin: dark  # options: classic, dark, solarized, solarized-dark, auto
 
 markdown: kramdown
 permalink: pretty
@@ -18,12 +16,4 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - README.md
-  - LICENSE
-  - .github
+  - jekyll-remote-theme
